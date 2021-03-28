@@ -1,0 +1,877 @@
+/* stynax of css, how to use selector
+
+for blue color, like h3, just h3{}
+
+for organge color, which is class, put. like .h3{}
+
+{no meaning of call two class together, like grid .span-1-of-4.
+
+    also can be two claasses stay together. such as .class.class}
+
+    so it can buse .class p or .class.class
+}
+
+but for class and blue color inside, like .main-nav la a
+
+it is recognized by class abd <h3>, not exactly by color.
+
+2. btn for all and  sepatare for single left and right, such as btn-left just for left, and right
+
+that is the technqiue of css for both and separate.
+
+3.and so grid span-1-of-4 and span-2-of-4, as a combination technquie.
+
+which has 2 use ways such as creating combination and a easy way to create css class .
+
+*/
+
+
+/* three complex sutructure here
+
+1. btn: a href >class
+
+2. nav:ul(class)>li>a
+
+3. 8-picture: ul(class)>li>figure(class)>img
+
+*/
+
+/*  what is there is the elements of html <標> & and css  效果,
+and so how many css and html elements are there are very good question to ask*/
+
+/* second question is to ask, is that necessary for this css class,
+what is the useful of this css class? */
+
+/* third question, is there any class, in this place? */
+
+/* thur is that the class simplfy? */
+
+/* fivfth, the pattern, what is the css pattern like the form section under each div row */
+
+/* when acting, 1 to test is the the direct object
+
+2 the effect is the point, not the start from end , like responsive css, a space with width could make a difference*/
+
+/* practing , 1. after acting, to review and translate from concept to coding and coding to concept */
+/* understand technique, ul pictucre techqiue for picture flow,
+grid span techqnuie 
+
+2. do it with a really simple and straight forward approac
+
+*/
+
+ /* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+    }    */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+html
+{
+font-size: 20px;
+color:#555;
+font-family:'Lato',sans-serif;
+font-weight: 300;
+}
+
+.clearfix {zoom: 1;}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child { margin-left: 0; } 
+
+.span-1-of-4 {
+	width: 23.8%; 
+}
+.span-1-of-2 {
+	width: 49.2%;
+}
+.span-1-of-3 {
+	width: 32.26%; 
+}
+section {
+    padding:80px 0;
+}
+
+h1{
+    color:#fff;
+
+    letter-spacing:2px;
+    word-spacing:4px;
+
+    font-weight: 300;
+    font-size:220%;
+
+    margin-bottom:5px;
+    margin-top:0px;
+    text-transform:uppercase;
+}
+
+h2 {
+font-weight:300;
+font-size:180%;
+
+text-transform:uppercase;
+word-spacing: 2px;
+letter-spacing: 1px;
+
+text-align: center;
+
+margin-bottom:50px;
+}
+/* common pattern */
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height:0;
+    visibility: hidden;
+}
+
+/* let us do it start from the empty, which is start from display(inline or block),then
+content:"",then height and width....so there is a form, and so then next for the space(margin) */
+h2:after {
+display:block;
+content:"";
+width:100px;
+height:2px;
+background-color: #e67e22;
+margin:0 auto;
+margin-top:30px;
+
+}
+
+.btn:link,
+.btn:visited,
+input[type=submit]
+/* padding 10 for up and down, 30 for left and right */
+{
+display:inline-block;
+/* inline-bloack give meaning padding,margin,otherwise padding/margin,cannot be used */
+/* though orginially it is a retangle */
+border-radius: 30px;
+color:#fff;
+padding:10px 30px;
+font-weight: 300;
+margin-right:15px;
+margin-top:15px;
+text-decoration:none;
+transition: background-color 0.2s,border 0.2s, color,0.2s;
+}
+/* common button style */
+.btn-left:link,
+.btn-left:visited,
+input[type=submit]
+{       border-style:none;
+
+    background-color:#e67e22;
+}
+/* what is the difference between btn & btn-ghost and btn-full */
+
+.btn-right:link,
+.btn-right:visited
+{
+    border:1px solid #e67e22;
+    color:#e67e22;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active { 
+    background-color:#cf6d17;
+    border-style:none;
+}
+
+.btn-right:hover,
+.btn-right:active {
+    color:#fff;
+    border:1px solid #cf6d17;
+}
+
+header
+/* if you not set height:100vh,
+then the image  sizewill follow the header content inside,
+that is what it means to place the inside in the header*/
+{ background-attachment: fixed;
+
+background-position:center;
+background-size:cover;
+height:100vh;
+background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0,0,0,0.7)),url(resources/img/hero.jpg);
+}
+
+
+.firsthead
+{
+position:absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+width:1140px;
+}
+
+/* learn header(background image),h1,btn,btn-full/ghost, firsthead(h1+2a(button) *
+total six block1,2,3,4,4.1,4.2,5,6*/
+
+.logo
+{
+margin-top:20px;
+height:100px;
+
+}
+
+
+
+/* total 4css box for nav from outside to inside*/
+.main-nav
+{
+float:right;
+margin-top:55px;
+}
+
+
+/* different with btn-left,this for class inside, which has no specific class, like li */
+.main-nav li
+{ display:inline-block;
+  margin-left:40px;
+}
+
+/* a inside is word/font */
+.main-nav li a:link,
+.main-nav li a:visited
+{   padding:8px 0px;
+    color:#fff;
+    font-size:88%;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active
+{
+border-bottom:2px solid #e67e22;
+transition: border-bottom 0.2s;
+}
+
+/* not understand how row works, especially for row before and after, which content and display table
+ */
+
+    /* width 23.8 can be combined into grid, they separate because they work as component in grid css */
+
+
+
+/* very good of css selector method, by adding box, separately select box inside p
+and simplfy with .grid p, .span-1-of-4 p too*/
+.box p { font-size:90%;
+        line-height: 145%;
+        margin-bottom: 10px;
+}
+
+.h2-long
+/* text-align:center does not work here for width set as 70% and
+the 2lines sentences will be set the center
+maybe not the affect that wants */
+{
+width:70%;
+margin-bottom:50px;
+margin-left:15%;
+line-height: 145%;
+}
+
+/* page 2 little slogan */
+h3 {
+    margin:15px 0;
+    font-weight: 300;
+    font-size:90%;
+    text-transform: uppercase;
+}
+
+
+.bigicn{
+font-size: 350%;
+color: #e67e22;
+margin-bottom: 10px;
+font-weight: 100;
+
+}
+/* class concept, as a box with box
+first start from outside box, which is placing, like margin */
+.section-meal{
+    padding:0px;
+}
+/* the margin -40, and -40 for figure and img(img not sure) */
+.meals-showcases
+{
+width:100%;
+list-style: none;
+}
+
+.meals-showcases li
+{
+display: block;
+float:left;
+width:25%;
+}
+
+
+
+
+.meals-photo
+{
+width:100%;
+margin:0;
+overflow: hidden;
+background-color: black;
+}
+
+/*     transition: transform can put in img or hover, with different effects. */
+
+.meals-photo img
+{   opacity: 0.7;
+    width:100%;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.meals-photo img:hover
+{
+    opacity: 1;
+    transform: scale(1);
+}
+
+/*
+
+unsoloved with the margin
+.meals-showcases
+{
+    width:100%;
+    list-style: none;
+    margin-left:-80px;
+}
+
+/* this is to set how much of the image you want to show, should be 100% */
+/* this is to set the class to be width with 100%, not the above concept? */
+/*
+.meal-photo {
+    width:100%;
+} */
+/* i don;t know why there is original margin in img between top and left,
+but setting float can clear it  */
+/* directly width of img is the total */
+/* .meal-photo img{
+    float:left;
+    width:25%;
+} */
+/* ----------------------------- */
+/*
+
+/*
+method 2
+.meal-photo img{
+    float:left;
+    width:100%;
+}
+
+.meals-showcases li{
+
+    width:25%;
+}
+
+method 2
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.meal-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+
+}
+
+*/
+.section-steps {
+
+    background-color: #f4f4f4;
+}
+
+
+
+
+.steps-box:first-child
+{margin-top:30px;
+text-align: right;
+padding-right: 3%;}
+
+
+/* good conpcet of understand css frame, why it is padding, not margin-left. */
+.steps-box:last-child
+{margin-top:70px;
+padding-left: 3%;
+}
+
+
+/* this is the effect! */
+.app-screen
+{
+width:40%;
+margin-bottom:80px;}
+
+
+/* pay attention to the affect, with works-step p */
+.works-step {
+margin-bottom:50px;
+font-weight:400;
+}
+
+.btn-app img {
+margin-top:30px;
+height:50px;
+margin-right:9px;
+}
+/* i guess, font-size tent to use %, and image for heigh and width in px */
+
+/* this is the orange circle number */
+.works-step div {
+    color:#e67e22;
+    border:#e67e22 solid 2px;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 150%;
+    width:55px;
+    height:55px;
+    padding:5px;
+    text-align: center;
+    float:left;
+    margin-right: 25px;
+}
+/* section travel */
+
+/*
+.view{
+list-style: none;
+width:100%;
+margin-top:15px;
+}
+
+.view li {
+display: block;
+width:25%;
+float:left;
+}
+
+.bb-class img
+{
+    width:100%;
+    height:auto;
+    transform: scale(1.2);
+    padding-right: 3px;
+}
+*/
+.view-pic {
+    width:250px;
+    height:auto;}
+
+
+.smlicn{
+  display: inline-block;
+
+    color:#e67e22;
+
+    width:30px;
+    height:18px;
+
+    margin-right:13px;
+    margin-left:2px;
+    margin-top:6px;
+    float:left;
+
+    /* vertical-align: middle; */
+
+}
+
+.col h3{
+    margin-top:20px;
+}
+
+.col p{
+   font-weight: 100;
+    line-height: 170%;
+    font-size: 90%;
+}
+
+/* slight difference make efforts */
+.icon-link:link,
+.icon-link:visited
+{   line-height: 150%;
+
+    color:#e67e22;
+    text-decoration: none;
+    border-bottom: #e67e22 solid 1px;
+    padding-bottom:1px;
+    transition: border 0.2s, color 0.2s;
+}
+
+/* slight difference make efforts */
+.icon-link:hover,
+.icon-link:active
+{
+    color:#000;
+    border-bottom:transparent solid 1px;
+
+}
+
+
+/* testmonial section */
+
+/* programming  --- straight forward */
+.testimonials
+{
+    background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(resources/img/back-customers.jpg);
+    color:#fff;
+    background-size:cover;
+    background-attachment: fixed;
+
+    }
+    /* for the p,picture, and name */
+blockquote
+{padding-left: 2%;
+font-style:italic;
+font-size: 90%;
+line-height: 145%;
+position: relative;
+}
+
+/* for the pic and name */
+/* maring only works for block elements */
+cite{
+    font-size: 90%;
+    display: block;
+    margin-top:25px;
+}
+
+
+/* if cite:before, then it is put it before the p because before cite content is p*/
+/* start with position(above), content, and the content details(adj) */
+/* concept of position absolute with it parents */
+blockquote:before{
+    content:"\201C";
+    font-size:500%;
+    display: block;
+    position:absolute;
+    left:-5px;
+    top:-8px;
+}
+
+/* for image */
+cite img{
+    height:50px;
+    border-radius: 50%;
+    margin-right:10px;
+    vertical-align: middle;
+}
+
+
+/*
+.bottom-quote (a class for the pic and name)
+{
+    margin-top:30px;
+}
+
+.bottom-quote img ( a class for the pic)
+{
+border-radius: 50%;
+width:50px;
+float:left;
+display: inline-block;
+}
+
+.bottom-quote p (a class for the name)
+{ float:left;
+padding-top:10px;
+transform: translate(5px);
+}
+*/
+
+.pricing{
+
+    background-color: #f4f4f4;
+}
+.plan-box
+{
+    background-color: #fff;
+    border-radius: 5px;
+    margin-left:5%;
+    width:90%
+    
+}
+
+.plan-box h3{    
+    font-weight: 100;
+}
+
+
+
+.plan-box div
+{padding:7px;
+border-bottom: #e8e8e8 solid 1px;}
+
+.plan-box .cross-pattern
+{
+    font-size:300%;
+    margin-bottom:-20px;
+    font-weight: 100;
+    color: #e67e22;}
+
+.plan-box .cross-pattern span
+{
+    font-size:30%;
+    font-weight: 300;
+}
+
+
+.plan-box .cross-pattern2 {
+font-size:80%
+}
+
+.plan-box ul{
+list-style: none;
+line-height: 180%;
+font-weight: 100;
+}
+
+    /* icon and text separate becuase of the icon problems */
+.icontick{  
+color: #e67e22;
+float: left;
+display: inline-block;
+
+margin-left: 8px;
+margin-right: 20px;
+font-size: 80%;
+margin-top: 8px;
+}
+
+.smlicn{
+    display: inline-block;
+    float:left;
+
+      color:#e67e22;
+  
+      width:30px;
+      height:18px;
+  
+      margin-right:13px;
+      margin-left:2px;
+      margin-top:6px;
+  
+      /* vertical-align: middle; */
+
+  }
+
+/* can use text-align:center, but the direct object is the div */
+.plan-box div:last-child{
+    text-align: center;
+    padding:0 0 15px 0;
+}
+
+ /* method 1 for setting bottom sign up */
+/* 3 concept, 1 direct object is the .btn, not a
+ 2to set it in the center, i use translate this is not the best,
+3 and margin by setting its space */
+
+ /* not using text-align */
+/* .plan-box .btn
+{transform:translateX(60px);
+    margin:2px 0 0 0;
+}  */
+
+.plan-box div:first-child{
+background-color: #fcfcfc;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+
+}
+
+.section-form
+{
+    background-color: #fff;
+}
+
+
+
+
+/* margin center technquie require width define. */
+/* need to set 60% of its parent class which is 1140px to center it */
+/*  method 1 for center
+.contact-form
+{ margin-left: 20%;   
+} */
+
+
+
+ .contact-form {
+    width: 60%;
+    margin: 0 auto;
+}  
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 150%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height:100px;
+}
+*:focus {outline:none;}
+
+input[type=checkbox]
+{
+    margin:-20px 5px -25px 0;
+}
+
+/* secetion nav */
+
+
+footer{
+    background-color:#333;
+    padding:50px;
+
+}
+
+
+.footer-nav 
+{float:left;
+list-style: none;
+font-size: 80%;
+}
+
+.social-link{
+float:right;
+list-style: none;
+}
+
+.footer-nav li
+{display: inline-block;
+margin-right:20px;
+}
+.social-link li
+{display: inline-block;
+margin-right:20px;
+}
+
+.footer-nav li:last-child,
+.social-link li:last-child
+{margin-right:0px;}
+
+/* link visited */
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-link li a:link,
+.social-link li a:visited
+{
+text-decoration: none;
+color: #888;
+transition: color 0.5s;
+}
+.social-link li a:link,
+.social-link li a:visited
+{
+    font-size:130%;
+}
+
+/* left */
+.footer-nav li a:hover,
+.footer-nav li a:active
+{
+color: #fff;
+}
+/* right */
+
+.facebook,
+.twitter,
+.google,
+.instagrm
+{   
+    transition: color 0.5s;
+    
+}
+
+.facebook:hover,
+.facebook:active
+{color:3b5999;        
+}
+
+.twitter:hover,
+.twitter:active
+{
+    color:white;
+}
+
+.google:hover,
+.google:active
+{
+    color:dd4b39;
+}
+
+.instagrm:hover,
+.instagrm:active{
+    color:e4405f;
+}
+
+
+
+footer p {
+
+    color:#888;
+    text-align: center;
+    margin-top:30px;
+}
+
+
